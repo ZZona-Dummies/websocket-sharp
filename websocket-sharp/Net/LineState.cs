@@ -1,4 +1,5 @@
 #region License
+
 /*
  * LineState.cs
  *
@@ -28,23 +29,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#endregion
+
+#endregion License
 
 #region Authors
+
 /*
  * Authors:
  * - Gonzalo Paniagua Javier <gonzalo@novell.com>
  */
-#endregion
 
-using System;
+#endregion Authors
 
 namespace WebSocketSharp.Net
 {
-  internal enum LineState
-  {
-    None,
-    Cr,
-    Lf
-  }
+    internal enum LineState
+    {
+        None,
+        Cr,
+        Lf
+    }
 }

@@ -1,4 +1,5 @@
 #region License
+
 /*
  * Chunk.cs
  *
@@ -28,64 +29,69 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#endregion
+
+#endregion License
 
 #region Authors
+
 /*
  * Authors:
  * - Gonzalo Paniagua Javier <gonzalo@ximian.com>
  */
-#endregion
+
+#endregion Authors
 
 using System;
 
 namespace WebSocketSharp.Net
 {
-  internal class Chunk
-  {
-    #region Private Fields
-
-    private byte[] _data;
-    private int    _offset;
-
-    #endregion
-
-    #region Public Constructors
-
-    public Chunk (byte[] data)
+    internal class Chunk
     {
-      _data = data;
+        #region Private Fields
+
+        private byte[] _data;
+        private int _offset;
+
+        #endregion Private Fields
+
+        #region Public Constructors
+
+        public Chunk(byte[] data)
+        {
+            _data = data;
+        }
+
+        #endregion Public Constructors
+
+        #region Public Properties
+
+        public int ReadLeft
+        {
+            get
+            {
+                return _data.Length - _offset;
+            }
+        }
+
+        #endregion Public Properties
+
+        #region Public Methods
+
+        public int Read(byte[] buffer, int offset, int count)
+        {
+            var left = _data.Length - _offset;
+            if (left == 0)
+                return left;
+
+            if (count > left)
+                count = left;
+
+            Buffer.BlockCopy(_data, _offset, buffer, offset, count);
+            _offset += count;
+
+            return count;
+        }
+
+        #endregion Public Methods
     }
-
-    #endregion
-
-    #region Public Properties
-
-    public int ReadLeft {
-      get {
-        return _data.Length - _offset;
-      }
-    }
-
-    #endregion
-
-    #region Public Methods
-
-    public int Read (byte[] buffer, int offset, int count)
-    {
-      var left = _data.Length - _offset;
-      if (left == 0)
-        return left;
-
-      if (count > left)
-        count = left;
-
-      Buffer.BlockCopy (_data, _offset, buffer, offset, count);
-      _offset += count;
-
-      return count;
-    }
-
-    #endregion
-  }
 }

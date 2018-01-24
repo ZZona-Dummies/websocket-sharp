@@ -1,4 +1,5 @@
 #region License
+
 /*
  * ServerState.cs
  *
@@ -24,17 +25,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#endregion
 
-using System;
+#endregion License
 
 namespace WebSocketSharp.Server
 {
-  internal enum ServerState
-  {
-    Ready,
-    Start,
-    ShuttingDown,
-    Stop
-  }
+    internal enum ServerState
+    {
+        Ready,
+        Start,
+        ShuttingDown,
+        Stop
+    }
 }

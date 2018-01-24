@@ -1,4 +1,5 @@
 #region License
+
 /*
  * CompressionMethod.cs
  *
@@ -24,29 +25,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#endregion
 
-using System;
+#endregion License
 
 namespace WebSocketSharp
 {
-  /// <summary>
-  /// Specifies the method for compression.
-  /// </summary>
-  /// <remarks>
-  /// The methods are defined in
-  /// <see href="https://tools.ietf.org/html/rfc7692">
-  /// Compression Extensions for WebSocket</see>.
-  /// </remarks>
-  public enum CompressionMethod : byte
-  {
     /// <summary>
-    /// Specifies no compression.
+    /// Specifies the method for compression.
     /// </summary>
-    None,
-    /// <summary>
-    /// Specifies DEFLATE.
-    /// </summary>
-    Deflate
-  }
+    /// <remarks>
+    /// The methods are defined in
+    /// <see href="https://tools.ietf.org/html/rfc7692">
+    /// Compression Extensions for WebSocket</see>.
+    /// </remarks>
+    public enum CompressionMethod : byte
+    {
+        /// <summary>
+        /// Specifies no compression.
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// Specifies DEFLATE.
+        /// </summary>
+        Deflate
+    }
 }

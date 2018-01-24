@@ -1,4 +1,5 @@
 #region License
+
 /*
  * QueryStringCollection.cs
  *
@@ -28,9 +29,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#endregion
+
+#endregion License
 
 #region Authors
+
 /*
  * Authors:
  * - Patrik Torstensson <Patrik.Torstensson@labs2.com>
@@ -38,7 +41,8 @@
  * - Tim Coleman <tim@timcoleman.com>
  * - Gonzalo Paniagua Javier <gonzalo@ximian.com>
  */
-#endregion
+
+#endregion Authors
 
 using System;
 using System.Collections.Specialized;
@@ -46,23 +50,23 @@ using System.Text;
 
 namespace WebSocketSharp.Net
 {
-  internal sealed class QueryStringCollection : NameValueCollection
-  {
-    public override string ToString ()
+    internal sealed class QueryStringCollection : NameValueCollection
     {
-      var cnt = Count;
-      if (cnt == 0)
-        return String.Empty;
+        public override string ToString()
+        {
+            var cnt = Count;
+            if (cnt == 0)
+                return String.Empty;
 
-      var output = new StringBuilder ();
-      var keys = AllKeys;
-      foreach (var key in keys)
-        output.AppendFormat ("{0}={1}&", key, this [key]);
+            var output = new StringBuilder();
+            var keys = AllKeys;
+            foreach (var key in keys)
+                output.AppendFormat("{0}={1}&", key, this[key]);
 
-      if (output.Length > 0)
-        output.Length--;
+            if (output.Length > 0)
+                output.Length--;
 
-      return output.ToString ();
+            return output.ToString();
+        }
     }
-  }
 }

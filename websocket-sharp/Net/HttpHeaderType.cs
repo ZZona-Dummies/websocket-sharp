@@ -1,4 +1,5 @@
 #region License
+
 /*
  * HttpHeaderType.cs
  *
@@ -24,21 +25,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#endregion
+
+#endregion License
 
 using System;
 
 namespace WebSocketSharp.Net
 {
-  [Flags]
-  internal enum HttpHeaderType
-  {
-    Unspecified = 0,
-    Request = 1,
-    Response = 1 << 1,
-    Restricted = 1 << 2,
-    MultiValue = 1 << 3,
-    MultiValueInRequest = 1 << 4,
-    MultiValueInResponse = 1 << 5
-  }
+    [Flags]
+    internal enum HttpHeaderType
+    {
+        Unspecified = 0,
+        Request = 1,
+        Response = 1 << 1,
+        Restricted = 1 << 2,
+        MultiValue = 1 << 3,
+        MultiValueInRequest = 1 << 4,
+        MultiValueInResponse = 1 << 5
+    }
 }
